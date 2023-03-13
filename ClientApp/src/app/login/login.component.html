@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="text-center mt-4 name">
+    Use whatever you want to login!
+  </div>
+  <form class="p-3 mt-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-field d-flex align-items-center">
+      <span class="far fa-user"></span>
+      <input type="text" name="userName" id="userName" placeholder="Username" formControlName="email">
+    </div>
+    <div class="form-field d-flex align-items-center">
+      <span class="fas fa-key"></span>
+      <input type="password" name="password" id="pwd" placeholder="Password" formControlName="password">
+    </div>
+    <input type="submit" value="Login" class="btn body-text mt-3" [disabled]="form.invalid">
+  </form>
+</div>
+
+<p></p>
+<button (click)="check()" class="btn btn-primary btn-block btn-lg">Check Method under Authorize</button>
+
+<p>{{authService.isLoggedIn()}}</p>
+<p>{{url}}</p>
+<p>{{token}}</p>
