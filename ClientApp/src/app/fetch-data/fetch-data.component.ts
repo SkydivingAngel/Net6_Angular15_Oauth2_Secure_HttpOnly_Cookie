@@ -14,9 +14,6 @@ export class FetchDataComponent {
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
 
-    alert(this.baseUrl + 'api/weatherforecast');
-    //'https://localhost:7137/api/weatherforecast'
-
     this.url = this.baseUrl + 'api/weatherforecast';
 
     http.get<WeatherForecast[]>(this.url).subscribe(result => {

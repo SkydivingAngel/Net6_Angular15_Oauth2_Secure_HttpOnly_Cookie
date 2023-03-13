@@ -31,7 +31,7 @@ namespace Net6AngularOauth2.Controllers
                 Secure = true,
                 SameSite = SameSiteMode.Strict,
                 Path = "/",
-                MaxAge = TimeSpan.FromMinutes(60) 
+                //MaxAge = TimeSpan.FromMinutes(60)
             });
 
             return Ok(new LoginResult()
