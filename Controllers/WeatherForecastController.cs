@@ -20,13 +20,13 @@ namespace Net6AngularOauth2.Controllers
             _logger = logger;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet, Route("weatherforecast")]
         public IEnumerable<WeatherForecast> GetWeatherForecast()
         {
             string token = Guid.NewGuid().ToString("N");
 
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 151).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),

@@ -28,7 +28,7 @@ export class AuthService {
   login(item: LoginRequest): Observable<LoginResult> {
 
     let url = this.baseUrl + "api/login";
-
+    //alert(url);
     item.url = url;
 
     return this.http.post<LoginResult>(url, item);

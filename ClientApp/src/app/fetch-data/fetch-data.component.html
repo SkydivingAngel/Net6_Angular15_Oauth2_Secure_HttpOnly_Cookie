@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts">
+    <tr *ngFor="let forecast of forecasts | slice: (page-1) * pageSize : page * pageSize">
       <td>{{ forecast.date }}</td>
       <td>{{ forecast.temperatureC }}</td>
       <td>{{ forecast.temperatureF }}</td>
@@ -23,3 +23,14 @@
     </tr>
   </tbody>
 </table>
+<p>Restricted size with rotation:</p>
+<ngb-pagination [collectionSize]="forecasts.length"
+                [(page)]="page"
+                [maxSize]="10"
+                [rotate]="true"
+                [ellipses]="true"
+                (pageChange)="onPaginationClick($event)"
+                [boundaryLinks]="true"></ngb-pagination>
+<hr />
+
+<pre>Current page: {{page}} {{clickedPage}}</pre>
