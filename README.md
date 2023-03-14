@@ -5,3 +5,11 @@
 - **LoginController** is where the Cookie is created after a succesful Login. I omitted the credentials validation.
 - Inside **LoginController** there is a method '**IsLoggedIn**' used to check if the user is Authorized.
 - Also **WeatherForecast** Controller has is **get** method protected.
+
+## Requirements
+- Visual Studio 2022
+- Node.js (for npm install)
+- Nuget Packages (simply run "dotnet restore"):
+Microsoft.AspNetCore.Authentication.JwtBearer
+Microsoft.AspNetCore.Mvc.NewtonsoftJson
+Microsoft.AspNetCore.SpaProxy

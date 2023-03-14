@@ -1,4 +1,4 @@
-﻿namespace Net6AngularOauth2
+﻿namespace Net6AngularOauth2.Models
 {
     public class LoginResult
     {

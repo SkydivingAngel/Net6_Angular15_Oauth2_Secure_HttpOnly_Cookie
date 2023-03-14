@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Net6AngularOauth2
+namespace Net6AngularOauth2.Models
 {
     public class LoginRequest
     {

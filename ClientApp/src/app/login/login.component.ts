@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
         console.log(result);
         this.loginResult = result;
         if (result.success && result.token) {
-          this.token = "Token: " + result.token;
+          this.token = result.token;
           this.url = result.url;
           this.authService.isAuthenticated = true;
         }

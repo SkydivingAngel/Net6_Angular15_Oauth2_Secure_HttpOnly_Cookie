@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Net6AngularOauth2.Models;
 
 namespace Net6AngularOauth2.Controllers
 {
