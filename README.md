@@ -10,6 +10,6 @@
 - Visual Studio 2022
 - Node.js (for npm install)
 - Nuget Packages (simply run "dotnet restore"):  
-Microsoft.AspNetCore.Authentication.JwtBearer
-Microsoft.AspNetCore.Mvc.NewtonsoftJson
-Microsoft.AspNetCore.SpaProxy
+Microsoft.AspNetCore.Authentication.JwtBearer  
+Microsoft.AspNetCore.Mvc.NewtonsoftJson  
+Microsoft.AspNetCore.SpaProxy  
