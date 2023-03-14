@@ -9,7 +9,7 @@
 ## Requirements
 - Visual Studio 2022
 - Node.js (for npm install)
-- Nuget Packages (simply run "dotnet restore"):
+- Nuget Packages (simply run "dotnet restore"):  
 Microsoft.AspNetCore.Authentication.JwtBearer
 Microsoft.AspNetCore.Mvc.NewtonsoftJson
 Microsoft.AspNetCore.SpaProxy
