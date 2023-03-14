@@ -15,7 +15,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let forecast of forecasts | slice: (page-1) * pageSize : page * pageSize">
+    <!--  | slice: (page-1) * pageSize : page * pageSize -->
+    <tr *ngFor="let forecast of forecasts">
       <td>{{ forecast.date }}</td>
       <td>{{ forecast.temperatureC }}</td>
       <td>{{ forecast.temperatureF }}</td>
@@ -24,7 +25,7 @@
   </tbody>
 </table>
 <p>Restricted size with rotation:</p>
-<ngb-pagination [collectionSize]="forecasts.length"
+<ngb-pagination [collectionSize]="forecastslength"
                 [(page)]="page"
                 [maxSize]="10"
                 [rotate]="true"
