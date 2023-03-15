@@ -9,12 +9,14 @@ namespace Net6AngularOauth2.Controllers
     [Route("api")]
     public class WeatherForecastController : ControllerBase
     {
+        private static int ItemsCount = new Random(Guid.NewGuid().GetHashCode()).Next(143, 321);
+
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private static readonly List<WeatherForecast> Repo = Enumerable.Range(1, 171).Select(index => new WeatherForecast
+        private static readonly List<WeatherForecast> Repo = Enumerable.Range(1, ItemsCount).Select(index => new WeatherForecast
         {
             Date = DateTime.Now.AddDays(index),
             TemperatureC = Random.Shared.Next(-20, 55),
@@ -26,6 +28,11 @@ namespace Net6AngularOauth2.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+
+
+
+
+
         }
 
         ////[Authorize]

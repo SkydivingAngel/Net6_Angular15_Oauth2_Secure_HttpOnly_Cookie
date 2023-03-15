@@ -30,8 +30,20 @@
                 [maxSize]="10"
                 [rotate]="true"
                 [ellipses]="true"
+                [pageSize]="pageSize"
                 (pageChange)="onPaginationClick($event)"
                 [boundaryLinks]="true"></ngb-pagination>
+
+<div class="form-inline float-start mr-1">
+  <select class="form-control" [value]="pageSize"
+          (change)="changePageSize($any($event).target.value)">
+    <option value="10">10 per Page</option>
+    <option value="20">20 per Page</option>
+    <option value="40">40 per Page</option>
+    <option value="50">50 per Page</option>
+  </select>
+</div>
+
 <hr />
 
-<pre>Current page: {{page}} {{clickedPage}}</pre>
+<div>Current page: {{page}}</div>

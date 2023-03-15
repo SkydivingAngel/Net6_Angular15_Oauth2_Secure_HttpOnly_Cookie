@@ -17,21 +17,27 @@ export class FetchDataComponent {
 
   public forecastslength = 0;
 
-  public http: HttpClient | undefined;
+  public http: HttpClient;
 
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     this.baseUrl = baseUrl;
-
-    this.url = this.baseUrl + 'api/weatherforecast';
     this.http = http;
+  }
 
+  ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
+    this.url = this.baseUrl + 'api/weatherforecast';
+    
     //alert(this.url);
     //'https://localhost:7137/api/weatherforecast'
 
     var params = new HttpParams()
       .set("pageIndex", '0')
-      .set("pageSize", '10');
+      .set("pageSize", this.pageSize.toString());
 
     //http.get<WeatherForecast[]>(this.url, { params }).subscribe(result => {
     //  this.forecasts = result;
@@ -39,26 +45,29 @@ export class FetchDataComponent {
     //  console.error(error)
     //});
 
-    http.get<Result>(this.url, { params }).subscribe(result => {
+    this.http.get<Result>(this.url, { params }).subscribe(result => {
       this.forecasts = result.data;
       this.forecastslength = result.count;
     }, error => {
       console.error(error)
     });
 
+  }
 
-
+  changePageSize(newSize: number) {
+    this.page = 0;
+    this.pageSize = Number(newSize);
+    this.loadData();
   }
 
   onPaginationClick(clickedPage: number) {
-
 
     console.log(clickedPage);
     this.clickedPage = clickedPage;
 
     var params = new HttpParams()
       .set("pageIndex", (this.clickedPage - 1).toString())
-      .set("pageSize", '10');
+      .set("pageSize", this.pageSize.toString());
 
     //this.http?.get<WeatherForecast[]>(this.url, { params }).subscribe(result => {
     //  this.forecasts = result;
